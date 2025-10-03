@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatot Kaca Group</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <!-- Link Google Fonts (Inter untuk teks umum) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk ikon (misalnya Instagram, pencarian, bulan, matahari) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Reset CSS dasar dan box-sizing */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Variabel CSS untuk warna mode terang (default) */
+        :root {
+            --bg-color-light: #f0f2f5;
+            --bg-color-card: #ffffff;
+            --text-color-primary: #333;
+            --text-color-secondary: #222;
+            --border-color: #ccc;
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.08);
+            --shadow-strong: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.2);
+            --header-footer-bg: #ffffff;
+            --icon-color: #555;
+            --icon-hover-color: #007bff;
+            --search-dropdown-bg: #ffffff; /* Tambahan untuk search dropdown */
+            --search-input-color: #333; /* Tambahan untuk warna teks input search */
+            --search-icon-color: #5d5d5d; /* Tambahan untuk warna ikon search dropdown */
+            --menu-item-hover-border: #67f0ff; /* Warna border hover menu item */
+            --menu-item-hover-bg: #222; /* Background menu item saat hover/tap */
+            --menu-item-hover-color: #67f0ff; /* Warna teks menu item saat hover/tap */
+        }
+
+        /* Variabel CSS untuk warna mode gelap */
+        body.dark-mode {
+            --bg-color-light: #1a1a1a;
+            --bg-color-card: #2c2c2c;
+            --text-color-primary: #f0f0f0;
+            --text-color-secondary: #e0e0e0;
+            --border-color: #444;
+            --shadow-light: rgba(255, 255, 255, 0.05);
+            --shadow-medium: rgba(255, 255, 255, 0.08);
+            --shadow-strong: rgba(255, 255, 255, 0.1);
+            --shadow-hover: rgba(255, 255, 255, 0.2);
+            --header-footer-bg: #222222;
+            --icon-color: #cccccc;
+            --icon-hover-color: #88bbff;
+            --search-dropdown-bg: #3c3c3c; /* Warna search dropdown gelap */
+            --search-input-color: #f0f0f0; /* Warna teks input search gelap */
+            --search-icon-color: #cccccc; /* Warna ikon search dropdown gelap */
+            --menu-item-hover-border: #88bbff; /* Warna border hover menu item gelap */
+            --menu-item-hover-bg: #444; /* Background menu item saat hover/tap gelap */
+            --menu-item-hover-color: #88bbff; /* Warna teks menu item saat hover/tap gelap */
+        }
+
+        /* Body dan Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color-light); /* Menggunakan variabel */
+            color: var(--text-color-primary); /* Menggunakan variabel */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk mode gelap */
+        }
+
+        /* Overlay untuk efek blur */
+        .blur-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .blur-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Fixed Header (Header paling atas dengan logo toko dan search) */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--header-footer-bg); /* Menggunakan variabel */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px var(--shadow-strong); /* Menggunakan variabel */
+            z-index: 1000;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk mode gelap */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--text-color-secondary); /* Menggunakan variabel */
+            transition: color 0.3s ease;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 15px; /* Jarak antara ikon pencarian dan mode gelap */
+            align-items: center;
+        }
+
+        /* /* .header-right  */
+        .out,
+        .header-right .dark-mode-toggle {
+            font-size: 1.8em;
+            color: var(--icon-color); /* Menggunakan variabel */
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .header-right .search-icon:hover,
+        .header-right .dark-mode-toggle:hover {
+            color: var(--icon-hover-color); /* Menggunakan variabel */
+        }
+
+        /* Container utama untuk membatasi lebar konten di desktop */
+        .main-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+            padding-top: 80px;
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Konten (Logo baru di atas, lalu logo Instagram + @galeribatualam) */
+        .content-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content-header .top-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        /* Wrapper untuk logo Instagram dan teks @galeribatualam */
+        .instagram-profile-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-bottom: 0px;
+        }
+
+        .instagram-profile-wrapper .instagram-icon {
+            font-size: 1rem;
+            color: var(--icon-color); /* Menggunakan variabel */
+            transition: color 0.3s ease;
+        }
+
+        .instagram-profile-wrapper .instagram-icon:hover {
+            color: #E1306C; /* Warna Instagram saat hover */
+        }
+
+        .instagram-profile-wrapper {
+            font-size: 0.2rem;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 0.2em;
+            color: var(--text-color-secondary); /* Menggunakan variabel */
+            margin: 0;
+            font-weight: 600;
+            transition: color 0.3s ease; /* Transisi untuk mode gelap */
+        }
+
+        /* Bagian Foto Produk Highlight - Full Layar */
+        .product-highlight {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            margin-bottom: 30px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 8px 20px var(--shadow-strong); /* Menggunakan variabel */
+            border-radius: 0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-highlight img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        /* Deskripsi Toko */
+        .description {
+            background-color: var(--bg-color-card); /* Menggunakan variabel */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow-medium); /* Menggunakan variabel */
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-size: 1.05em;
+            max-width: 100%;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Transisi */
+        }
+
+        /* Container Menu Katalog */
+        .menu-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Styling untuk setiap item menu */
+        .menu-item {
+            display: block;
+            width: 90%;
+            max-width: 450px;
+            background-color: var(--bg-color-card); /* Menggunakan variabel */
+            padding: 18px 25px;
+            border-radius: 50px;
+            border: 5px solid var(--border-color); /* Menggunakan variabel */
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color-primary); /* Menggunakan variabel */
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Transisi */
+            box-shadow: 0 4px 10px var(--shadow-light); /* Menggunakan variabel */
+            /* Animasi goyang miring selalu aktif */
+            animation: subtleSway 8s ease-in-out infinite alternate;
+        }
+
+        /* Animasi miring/goyang halus */
+        @keyframes subtleSway {
+            0% {
+                transform: translateX(2px) rotateZ(0deg);
+            }
+
+            25% {
+                transform: translateX(-10px) rotateZ(-0.2deg);
+            }
+
+            50% {
+                transform: translateX(15px) rotateZ(0.2deg);
+            }
+
+            75% {
+                transform: translateX(-10px) rotateZ(-0.2deg);
+            }
+
+            100% {
+                transform: translateX(2px) rotateZ(0deg);
+            }
+        }
+
+        /* Animasi Hover (Timbul dan Blur) */
+        .menu-item:hover,
+        .menu-item.active-tapped {
+            border-color: var(--menu-item-hover-border); /* Menggunakan variabel */
+            box-shadow: 0 25px 60px var(--shadow-hover); /* Menggunakan variabel */
+            transform: translateY(-8px) scale(1.03);
+            animation: none; /* Hentikan animasi goyang saat hover/tapped */
+            position: relative;
+            z-index: 1002;
+            background-color: var(--menu-item-hover-bg); /* Menggunakan variabel */
+            color: var(--menu-item-hover-color); /* Menggunakan variabel */
+        }
+
+        /* Fixed Footer (Made in Fryn) */
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--header-footer-bg); /* Menggunakan variabel */
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 -4px 15px var(--shadow-strong); /* Menggunakan variabel */
+            z-index: 1000;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-size: 0.9em;
+            color: var(--text-color-primary); /* Menggunakan variabel */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Transisi */
+        }
+        
+        /* Styling untuk link TikTok di footer */
+        .fixed-footer a {
+            text-decoration: none;
+            color: var(--text-color-primary); /* Menggunakan variabel tema */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px; /* Jarak antara ikon dan teks */
+            transition: color 0.3s ease;
+        }
+
+        .fixed-footer a:hover {
+            color: #FE2C55; /* Warna khas TikTok saat hover */
+        }
+
+        .fixed-footer .tiktok-icon {
+            font-size: 1.2em; /* Ukuran ikon TikTok */
+            transition: transform 0.3s ease;
+        }
+
+        .fixed-footer a:hover .tiktok-icon {
+            transform: scale(1.1); /* Sedikit membesar saat hover */
+        }
+
+        /* Media Queries untuk Responsivitas */
+        @media (max-width: 480px) {
+            .fixed-header {
+                padding: 12px 15px;
+            }
+
+            .header-logo {
+                width: 30px;
+                height: 30px;
+            }
+
+            .header-title {
+                font-size: 1em;
+            }
+
+            .main-container {
+                padding-top: 70px;
+                padding-bottom: 50px;
+            }
+
+            .content-header .top-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .instagram-profile-wrapper .instagram-icon {
+                font-size: 1.2rem;
+            }
+
+            .instagram-profile-wrapper h1 {
+                font-size: 1rem;
+            }
+
+            .description {
+                font-size: 0.95em;
+                padding: 20px;
+            }
+
+            .menu-item {
+                font-size: 1em;
+                padding: 15px 20px;
+            }
+
+            .fixed-footer {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+
+            .search-overlay {
+                padding-top: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Overlay untuk efek blur, ditempatkan di awal body -->
+    <div id="blurOverlay" class="blur-overlay"></div>
+
+    <!-- Fixed Header (Header paling atas dengan logo toko dan search) -->
+    <header class="fixed-header">
+        <div class="header-left">
+            <!-- Ganti 'placeholder-logo.png' dengan URL logo toko Anda -->
+            <img src="img/1/logo.png" alt="Logo Toko" class="header-logo">
+            <span class="header-title">Istana Batu Alam dan Genteng</span>
+        </div>
+        <div class="header-right">
+            <!-- IKON MODE GELAP/TERANG -->
+            <i class="fas fa-moon dark-mode-toggle" id="darkModeToggle"></i>
+            <a class="out" href="index.html"> <i class="fas fa-door-open"> </i> </a>
+        </div>
+
+    </header>
+
+    <div class="main-container">
+        <!-- Foto Produk Highlight -->
+        <section class="product-highlight">
+            <!-- Ganti 'Catalog Susun paliamanan.jpg' dengan URL gambar produk highlight Anda -->
+            <img src="img/1/batualam.svg" alt="Produk Unggulan Galeri Batu Alam">
+        </section>
+
+        <!-- Header Konten (Logo baru di atas, lalu logo Instagram + @galeribatualam) -->
+        <header class="content-header">
+            <!-- Logo baru di atas tumpukan -->
+            <!-- Ganti 'gatotkaca logo.png' dengan URL logo baru Anda -->
+            <img src="img/1/logo2.svg" alt="Logo Utama" class="top-logo">
+
+            <!-- Wrapper untuk logo Instagram dan teks @galeribatualam -->
+            <div class="instagram-profile-wrapper">
+                <!-- Logo Instagram di samping kiri tulisan @galeribatualam -->
+                <a href="https://www.instagram.com/gatotkacagroup_" target="_blank"
+                    aria-label="Kunjungi Instagram Gatot Kaca Group">
+                    <i class="fab fa-instagram instagram-icon"><span class="h1">gatotkacagroup_</span></i>
+                </a>
+                
+            </div>
+        </header>
+
+        <!-- Deskripsi Toko -->
+        <section class="description">
+            <p>Supplier terbesar Batu Alam dan Genteng <br>Di Pare-Kediri dan sekitarnya,<br> menyediakan berbagai jenis
+                Batu Alam,<br>Genteng,Cat,Marmer,Granit, dan segala macam bahan bangunan lainya.</p>
+        </section>
+
+        <!-- Menu Katalog dan Kontak -->
+        <nav class="menu-container">
+            <!-- Katalog Batu Alam -->
+            <a href="https://drive.google.com/file/d/1_OMlRE3gbL1v8Ttacn-OCR95njNB_aKk/view?usp=sharing" target="_blank" class="menu-item">KATALOG BATU
+                ALAM</a>
+
+            <!-- Katalog Genteng -->
+            <a href="https://drive.google.com/file/d/1lBQovyJvb-NldtoIdh8l7FNA4cqkU_Uy/view?usp=drive_link" target="" class="menu-item">KATALOG GENTENG</a>
+
+            <!-- katalog granit dan marmer -->
+            <a href="https://wa.me/c/6285706539356" target="" class="menu-item">KATALOG WhatsApp</a>
+
+            <!-- Lokasi (Google Maps) -->
+            <!-- Ganti URL dengan link Google Maps lokasi Anda -->
+            <a href="https://maps.app.goo.gl/gdCsR1c5E8kXuuFV7"  class="menu-item">LOKASI</a>
+
+            <!-- Kontak Kami (WhatsApp) -->
+            <!-- Ganti nomor telepon dan pesan dengan milik Anda -->
+            <a href="https://wa.wizard.id/f6c84d"
+                target="" class="menu-item">KONTAK KAMI</a>
+        </nav>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer class="fixed-footer">
+         <a href="https://www.tiktok.com/@tb.gatotkaca?_t=ZS-8yIR20HzmH2&_r=1" target="_blank" aria-label="Kunjungi TikTok kami">
+            <i class="fab fa-tiktok tiktok-icon"></i>
+            @tb.gatotkacagroup
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Website Gatot Kaca Group siap!');
+
+            // Logika untuk Animasi Menu "Timbul" dan Blur Latar Belakang
+            const menuItems = document.querySelectorAll('.menu-item');
+            const blurOverlay = document.getElementById('blurOverlay');
+
+            menuItems.forEach(item => {
+                // Untuk Desktop (hover)
+                item.addEventListener('mouseenter', function () {
+                    blurOverlay.classList.add('active');
+                });
+                item.addEventListener('mouseleave', function () {
+                    // Hanya matikan blur jika tidak ada item lain yang sedang di-hover
+                    if (!document.querySelector('.menu-item:hover')) {
+                        blurOverlay.classList.remove('active');
+                    }
+                });
+
+                // Untuk Mobile (tap)
+                item.addEventListener('touchstart', function () {
+                    // Hapus kelas 'active-tapped' dari semua item lain
+                    menuItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active-tapped');
+                        }
+                    });
+                    this.classList.toggle('active-tapped'); // Toggle kelas pada item yang disentuh
+
+                    // Aktifkan blur jika ada item yang aktif, nonaktifkan jika tidak ada
+                    if (document.querySelector('.menu-item.active-tapped')) {
+                        blurOverlay.classList.add('active');
+                    } else {
+                        blurOverlay.classList.remove('active');
+                    }
+                });
+            });
+
+            // Menutup efek blur dan 'active-tapped' jika mengklik di luar menu item pada mobile
+            document.addEventListener('click', function (event) {
+                let isMenuItemClick = false;
+                menuItems.forEach(item => {
+                    if (item.contains(event.target)) {
+                        isMenuItemClick = true;
+                    }
+                });
+
+                if (!isMenuItemClick) {
+                    menuItems.forEach(item => {
+                        item.classList.remove('active-tapped');
+                    });
+                    blurOverlay.classList.remove('active');
+                }
+            });
+
+            // Logika untuk Dark Mode Toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+
+            // Fungsi untuk menerapkan mode gelap
+            function applyDarkMode(isDark) {
+                if (isDark) {
+                    document.body.classList.add('dark-mode');
+                    darkModeToggle.classList.remove('fa-moon');
+                    darkModeToggle.classList.add('fa-sun');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    darkModeToggle.classList.remove('fa-sun');
+                    darkModeToggle.classList.add('fa-moon');
+                }
+            }
+
+            // Memuat preferensi dari localStorage saat halaman dimuat
+            const savedMode = localStorage.getItem('darkMode');
+            if (savedMode === 'enabled') {
+                applyDarkMode(true);
+            } else {
+                applyDarkMode(false); // Pastikan mode terang adalah default jika tidak ada preferensi
+            }
+
+            // Event listener untuk toggle mode gelap
+            darkModeToggle.addEventListener('click', function () {
+                if (document.body.classList.contains('dark-mode')) {
+                    applyDarkMode(false);
+                    localStorage.setItem('darkMode', 'disabled');
+                } else {
+                    applyDarkMode(true);
+                    localStorage.setItem('darkMode', 'enabled');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
