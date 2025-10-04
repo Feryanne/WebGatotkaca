@@ -45,10 +45,10 @@ function showSlides(n) {
     slides[slideIndex - 1].classList.add('active');
     if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active');
 
-
+    // Suntikkan Teks Dinamis
     const currentData = slideData[slideIndex - 1];
 
-
+    // Transisi Fade-out Teks
     textContainer.classList.remove('fade-in');
 
     setTimeout(() => {
@@ -61,14 +61,14 @@ function showSlides(n) {
     }, 300);
 }
 
-
+// Fungsi Navigasi Panah Kiri/Kanan
 function plusSlides(n) {
     clearTimeout(timer);
     showSlides(slideIndex += n);
     autoShowSlides();
 }
 
-
+// Fungsi Navigasi Dot
 function currentSlide(n) {
     clearTimeout(timer);
     slideIndex = n;
@@ -76,7 +76,7 @@ function currentSlide(n) {
     autoShowSlides();
 }
 
-
+// Fungsi Otomatisasi (Setiap 8 detik)
 function autoShowSlides() {
     clearTimeout(timer);
     timer = setTimeout(() => {
@@ -86,7 +86,7 @@ function autoShowSlides() {
     }, 8000);
 }
 
-
+// INISIALISASI
 window.onload = function () {
     slides = document.getElementsByClassName("mySlides");
     dots = document.getElementsByClassName("dot");
@@ -100,7 +100,9 @@ window.onload = function () {
     }
 };
 
+// About Section Read More Button
 
+// >>> KODE  <<<
 const readMoreBtn = document.getElementById('read-more-btn');
 const moreText = document.getElementById('about-text-wrapper');
 
@@ -156,7 +158,7 @@ function plusproductSlides(n) {
     showproductCards(n);
 }
 
-
+// FUNGSI UNTUK RESET POSISI CAROUSEL PADA RESIZE
 function handleResize() {
     const oldCardsPerView = cardsPerView;
     updateCardsPerView();
@@ -166,7 +168,7 @@ function handleResize() {
     showproductCards(0);
 }
 
-
+// Inisialisasi Carousel PORTOFOLIO
 productCarousel = document.getElementById('productCarousel');
 productCards = document.getElementsByClassName("product-card");
 
@@ -189,7 +191,7 @@ if (productCarousel && productCards.length > 0) {
             { title: "Menjual Berbagai Macam Granit", detail: "Tingkatkan kelas interior dan eksterior rumah Anda dengan koleksi granit premium kami. Sebagai supplier terpercaya di Pare-Kediri, kami menawarkan ragam motif dan finish granit yang cocok untuk lantai atau countertop. Selain batu alam dan genteng, kami menjamin ketersediaan stok balok besar dan layanan potong custom untuk menciptakan tampilan yang megah." }
         ];
 
-        
+        // Variabel untuk Modal & Lightbox
         let currentImageIndex = 0;
         let lightboxModal;
         let lightboxImage;
@@ -252,18 +254,18 @@ if (productCarousel && productCards.length > 0) {
             });
         }
 
-        
+         // Variabel untuk Gallery Carousel
         let currentGalleryPage = 0; 
         let galleryWrapper;
         const totalGalleryPages = 2; 
 
-        
+        // LOGIC GALERI FOTO PROYEK
         function showGalleryPage(step) {
             if (!galleryWrapper) return;
             
             currentGalleryPage += step;
 
-            
+            // Logika loop carousel
             if (currentGalleryPage >= totalGalleryPages) {
                 currentGalleryPage = 0; 
             }
@@ -271,7 +273,7 @@ if (productCarousel && productCards.length > 0) {
                 currentGalleryPage = totalGalleryPages - 1; 
             }
             
-            const offset = currentGalleryPage * 100; // 100% per halaman
+            const offset = currentGalleryPage * 100; 
             
             galleryWrapper.style.transform = `translateX(-${offset}%)`;
         }
@@ -280,7 +282,7 @@ if (productCarousel && productCards.length > 0) {
             showGalleryPage(n);
         }
 
-        
+        //  * 2. Lightbox Modal (Popup untuk Galeri Foto)
         function openLightbox(index) {
             currentImageIndex = index;
             lightboxModal.style.display = "block";
@@ -314,7 +316,7 @@ if (productCarousel && productCards.length > 0) {
             updateLightboxImage();
         }
 
-        
+        // Fungsi untuk menutup modal/lightbox ketika user mengklik di luar area
         window.onclick = function(event) {
             const modal = document.getElementById('projectModal');
             if (event.target === modal) {
@@ -327,9 +329,12 @@ if (productCarousel && productCards.length > 0) {
         }
 
 
+
+        // pop up untuk gallery
     function openLightGL(index) {
     currentImageIndex = index;
 
+    // Pastikan elemen modal sudah terinisialisasi
     if (lightimgModal) {
         lightimgModal.style.display = "block"; 
         updateLightboxImage();
@@ -351,16 +356,11 @@ if (productCarousel && productCards.length > 0) {
 
 
 function kirimPesanWhatsAppGatotKaca() {
-    // 1. Nomor Tujuan
     const nomorTujuan = "6285706539356"; 
-
-    // 2. Ambil Nilai dari Form (Pastikan ID form sudah benar)
     const nama = document.getElementById('namaPemesan').value;
     const proyek = document.getElementById('RencanaPembangunan').value;
     const material = document.getElementById('KebutuhanMatrial').value;
     const waPelanggan = document.getElementById('PesanKonsultasi').value;
-
-    // 3. Teks Pesan Template 
     let pesan = `PERMINTAAN KONSULTASI MATERIAL - GATOT KACA GROUP
 Assalamualaikum/Salam, saya ingin menanyakan dan berkonsultasi mengenai kebutuhan material.
 
@@ -378,7 +378,6 @@ Mohon segera dihubungi kembali untuk diskusi harga dan ketersediaan barang. Teri
 
     const finalPesanEncoded = encodeURIComponent(pesan);
 
-    // const urlWaMe = `https://wa.me/${nomorTujuan}?text=${pesanEncoded}`; 
     const urlWaMe = `https://api.whatsapp.com/send?phone=${nomorTujuan}&text=${finalPesanEncoded}`;
 
     window.open(urlWaMe, '_blank'); 
