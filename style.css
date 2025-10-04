@@ -34,8 +34,6 @@ body {
   z-index: 0;
 }
 
-/* Navbar */
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -57,7 +55,7 @@ body {
   font-weight: 800;
   color: #ff0000;
   font-style: italic;
-  text-shadow : 0 0 2px #00000076, 0 0 1px #ffffff00;
+  text-shadow: 0 0 2px #00000076, 0 0 1px #ffffff00;
 }
 
 /* Gaya untuk Gambar Logo Baru */
@@ -78,11 +76,11 @@ body {
   font-size: 1.3rem;
   margin: 0 1rem;
   font-weight: 700;
-  text-shadow : 2px 2px 5px #000000, 3px 2px 5px #000000;
+  text-shadow: 2px 2px 5px #000000, 3px 2px 5px #000000;
 }
 
 .navbar .navbar-nav a:hover {
-  color:rgb(255, 25, 25);
+  color: rgb(255, 25, 25);
   text-shadow: #fff;
 }
 
@@ -136,9 +134,6 @@ body {
   display: none;
 }
 
-
-/* hero section */
-
 .hero {
   min-height: 100vh;
   display: flex;
@@ -153,7 +148,7 @@ body {
   top: -20px;
 }
 
-.hero::before{
+.hero::before {
   content: '';
   background: #0000004f;
   position: absolute;
@@ -164,7 +159,6 @@ body {
   z-index: 5;
 }
 
-/* Kontainer Slide Gambar */
 .slideshow-container {
   position: absolute;
   width: 100%;
@@ -174,7 +168,6 @@ body {
   z-index: 0;
 }
 
-/* Setiap Slide Gambar */
 .mySlides {
   display: none;
   width: 100%;
@@ -187,17 +180,16 @@ body {
   left: 0;
   opacity: 0;
   transition: opacity 5.0s ease-in-out;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* SLIDE AKTIF */
 .mySlides.active {
   display: block;
   opacity: 1;
 }
 
-/* Definisikan Background Image untuk Setiap Slide */
 .slideshow-container .mySlides:nth-child(1) {
-  background-image: url('img/1/1.svg');
+  background-image: url('img/1/1.webp');
 }
 
 .slideshow-container .mySlides:nth-child(2) {
@@ -220,8 +212,6 @@ body {
   background-image: url('img/1/plafon.svg');
 }
 
-
-/* Konten Teks Hero */
 .hero .content {
   padding: 1rem 7%;
   align-items: center;
@@ -253,8 +243,6 @@ body {
   margin-top: -1rem;
 }
 
-
-/* Gaya untuk Teks Dinamis */
 #dynamic-text-content {
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
@@ -304,7 +292,6 @@ body {
   background-color: #717171;
 }
 
-/* Kontrol Panah Kiri-Kanan */
 .prev,
 .next {
   cursor: pointer;
@@ -358,50 +345,47 @@ body {
 }
 
 .cta {
-    cursor: pointer;
-    margin-top: 1rem;
-    text-decoration: none;
-    display: inline-block;    
-    z-index: 20;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ffffff; 
-    background: rgba(0, 0, 255, 0);
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  cursor: pointer;
+  margin-top: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 20;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(0, 0, 255, 0);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
-/* PERBAIKAN: CSS BARU UNTUK DUA TOMBOL BERSEBELAHAN DI BAWAH KONTEN */
 .cta-group {
-    display: flex;
-    justify-content: center; 
-    gap: 1rem; 
-    width: 100%; 
-    /* margin-top: 2rem;  */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .cta-secondary {
   cursor: pointer;
-   margin-top: 1rem;
-    text-decoration: none;
-    display: inline-block;    
-    z-index: 20;
-    padding: 1rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #ffffff; 
-    background: rgba(0, 0, 255, 0);
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgb(1, 1, 3);
+  margin-top: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 20;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffffff;
+  background: rgba(0, 0, 255, 0);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgb(1, 1, 3);
 }
 
 .cta:hover,
-.cta-secondary:hover
- {
-    text-shadow: 2px 2px 4px rgb(160, 160, 255);
-    background: rgb(255, 0, 0);
-    color: #ffffff;
+.cta-secondary:hover {
+  text-shadow: 2px 2px 4px rgb(160, 160, 255);
+  background: rgb(255, 0, 0);
+  color: #ffffff;
 }
 
 .desk {
@@ -463,8 +447,7 @@ body {
   text-align: justify;
 }
 
-/* >>> KODE BARU: Wrapper untuk Konten yang Dibatasi <<< */
- .about-text-wrapper {
+.about-text-wrapper {
   position: relative;
   max-height: 45rem;
   overflow: hidden;
@@ -472,7 +455,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Efek Fade/Penutup di bagian bawah */
 .about-text-wrapper::after {
   content: '';
   position: absolute;
@@ -484,23 +466,18 @@ body {
   pointer-events: none;
 }
 
-/* Kelas saat teks diperluas */
 .about-text-wrapper.expanded {
   max-height: 3000px;
 }
 
-/* Hilangkan batasan tinggi pada gambar saat diperluas */
 .about-text-wrapper.expanded img {
   max-height: 200rem;
 }
 
-/* Hilangkan efek fade saat diperluas */
 .about-text-wrapper.expanded::after {
   background: none;
 }
 
-
-/* Gaya Tombol Lihat Selengkapnya */
 .read-more-btn {
   display: block;
   margin: 0 auto 2rem;
@@ -519,9 +496,6 @@ body {
 .read-more-btn:hover {
   background-color: #cc0000;
 }
-
-
-/* ABOUT & SECTIONS UMUM */
 
 .about {
   padding: 1.4rem 7% 4rem;
@@ -596,7 +570,6 @@ body {
   background: none;
 }
 
-/* Gaya Tombol Umum (Lihat Selengkapnya) */
 .read-more-btn,
 .product-btn {
   display: block;
@@ -618,178 +591,190 @@ body {
   padding: 1rem;
 }
 
+.gallery-section {
+  background-color: var(--light-bg);
+  padding: 2rem 7%;
+  position: relative;
+}
 
-        /* GALERI FOTO PROYEK (GALLERY) */
-        .gallery-section {
-            background-color: var(--light-bg);
-            padding: 2rem 7%; 
-            position: relative;
-        }
+.gallery-section h2 {
+  color: #000000;
+  font-size: 3rem;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
 
-        .gallery-section h2{
-          color: #000000;
-          font-size: 3rem;
-          align-items: center;
-          text-align: center;
-          margin-top: 0;
-          margin-bottom: 3rem;
-          padding: 2rem;
-        }
+.gallery-section h2 span {
+  color: red;
+}
 
-        .gallery-section h2 span{
-          color: red;
-        }
-        
-        .gallery-container {
-            position: relative;
-            overflow: hidden;
-        }
+.gallery-container {
+  position: relative;
+  overflow: hidden;
+}
 
-        .gallery-grid-wrapper {
-            display: flex; 
-            transition: transform 0.5s ease-in-out;
-            gap: -10px; 
-            padding: 1rem 0;
-        }
+.gallery-grid-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: -10px;
+  padding: 1rem 0;
+}
 
-        .gallery-page {
-            flex: 0 0 100%; 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            grid-template-rows: repeat(3, 1fr); 
-            gap: 1px;
-            flex-shrink: 0;
-            height: auto; 
-        }
+.gallery-page {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1px;
+  flex-shrink: 0;
+  height: auto;
+}
 
-        .gallery-item {
-            cursor: pointer;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            padding-bottom: 150%; 
-        }
-        
-        .gallery-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
+.gallery-item {
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-bottom: 150%;
+}
 
-        /* Kontrol Carousel Galeri */
-        .gallery-container .gal-prev, 
-        .gallery-container .gal-next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            transition: 0.3s ease;
-            user-select: none;
-            z-index: 10;
-            border-radius: 50%;
-            color: white; 
-            background-color: rgba(44, 44, 81, 0.475); 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        .gallery-container .gal-next { right: 0; }
-        .gallery-container .gal-prev { left: 0; }
-        .gallery-container .gal-prev:hover, 
-        .gallery-container .gal-next:hover { 
-            background-color: var(--accent-color); 
-        }
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
 
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
 
-          /* lightimg Modal (Popup untuk Galeri Foto) */
-        .lightGLbox {
-            display: none;
-            position: fixed;
-            z-index: 9999; 
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.95); /* Hampir hitam penuh */
-            animation: modalFadeIn 0.3s;
-        }
-        
-        .lightGL-content {
-            margin: auto;
-            display: block;
-            width: 90%;
-            max-width: 900px;
-            position: relative;
-            user-select: none;
-        }
+.gallery-container .gal-prev,
+.gallery-container .gal-next {
+  -webkit-overflow-scrolling: touch;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+  user-select: none;
+  z-index: 10;
+  border-radius: 50%;
+  color: white;
+  background-color: rgba(44, 44, 81, 0.475);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
 
-        .lightGL-img {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 80vh; 
-            object-fit: contain;
-            border-radius: 10px;
-        }
-        
-        #caption {
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            font-size: 1.2rem;
-        }
+.gallery-container .gal-next {
+  right: 0;
+}
 
-        .lightGL-close {
-            position: absolute;
-            top: -25px; /* Pindahkan ke atas luar */
-            right: 0px; 
-            color: #f1f1f1;
-            font-size: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .lightGL-close:hover,
-        .lightGL-close:focus {
-            color: var(--accent-color);
-        }
+.gallery-container .gal-prev {
+  left: 0;
+}
 
-        /* Navigasi lightimg (Next/Prev) */
-        .lightGL-nav {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -50px;
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-            font-size: 20px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-        .lightGL-nav.prev-nav { left: 0; }
-        .lightGL-nav.next-nav { right: 0; border-radius: 3px 0 0 3px; }
-        .lightGL-nav:hover { background-color: rgb(0, 0, 0); }
+.gallery-container .gal-prev:hover,
+.gallery-container .gal-next:hover {
+  background-color: var(--accent-color);
+}
 
-/* product SECTION (CAROUSEL PRODUK) */
-.product h2{
+.lightGLbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: modalFadeIn 0.3s;
+}
+
+.lightGL-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  user-select: none;
+}
+
+.lightGL-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+
+.lightGL-close {
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightGL-close:hover,
+.lightGL-close:focus {
+  color: var(--accent-color);
+}
+
+.lightGL-nav {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.lightGL-nav.prev-nav {
+  left: 0;
+}
+
+.lightGL-nav.next-nav {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.lightGL-nav:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.product h2 {
   color: #000;
   font-size: 3rem;
   text-align: center;
@@ -802,7 +787,7 @@ body {
 }
 
 
-.product h4{
+.product h4 {
   text-align: center;
   margin-top: -1rem;
   margin-bottom: 5rem;
@@ -810,7 +795,6 @@ body {
   font-size: 1.8rem;
   font-weight: 300;
 }
-
 
 .product {
   margin: 15rem 0;
@@ -821,16 +805,16 @@ body {
   color: #000;
 }
 
-/* Kontainer Utama Carousel (Viewport) */
 .product-carousel-container {
   position: relative;
   overflow: hidden;
   padding: 0 40px;
   border-bottom: 1px solid #000000;
   color: #000;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll
 }
 
-/* Wrapper yang bergerak horizontal */
 .product-grid-wrapper {
   display: flex;
   gap: 4rem;
@@ -915,144 +899,148 @@ body {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
-        /* MODAL & lightimg (POPUP) */
-        
-        /* Modal Detail Produk (Popup untuk Product Card) */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 20000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0, 0, 0, 0.788); 
-            backdrop-filter: blur(10px);
-            color: floralwhite;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
 
-        .modal p{
-          color: white;
-          font-weight: 300;
-          font-size: 1.2rem;
-          text-align: justify;
-        }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 20000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.788);
+  backdrop-filter: blur(10px);
+  color: floralwhite;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-        .modal h3{
-          font-size: 2rem;
-          margin-bottom: 1rem;
-          top: 0;
-        }
+.modal p {
+  color: white;
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-align: justify;
+}
 
-        .modal-content {
-            background-color: rgba(113, 113, 113, 0.591);
-            margin: 15% auto; /* 15% dari atas dan dipusatkan */
-            padding: 30px;
-            border-radius: 10px;
-            width: 80%; /* Lebar modal */
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            position: relative;
-        }
+.modal h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  top: 0;
+}
 
-        .close-btn {
-            color: var(--text-color);
-            float: right;
-            font-size: 20px;
-            font-weight: 200;
-            cursor: pointer;
-            line-height: 1;
-        }
+.modal-content {
+  background-color: rgba(113, 113, 113, 0.591);
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-            top: 0;
-        }
-        
-        /* lightimg Modal (Popup untuk Galeri Foto) */
-        .lightimg-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999; /* Lebih tinggi dari modal biasa */
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.95); /* Hampir hitam penuh */
-            animation: modalFadeIn 0.3s;
-        }
-        
-        .lightimg-content {
-            margin: auto;
-            display: block;
-            width: 90%;
-            max-width: 900px;
-            position: relative;
-            user-select: none;
-        }
+.close-btn {
+  color: var(--text-color);
+  float: right;
+  font-size: 20px;
+  font-weight: 200;
+  cursor: pointer;
+  line-height: 1;
+}
 
-        .lightimg-img {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 80vh; 
-            object-fit: contain;
-            border-radius: 10px;
-        }
-        
-        #caption {
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            font-size: 1.2rem;
-        }
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  top: 0;
+}
 
-        .lightimg-close {
-            position: absolute;
-            top: -25px; /* Pindahkan ke atas luar */
-            right: 0px; 
-            color: #f1f1f1;
-            font-size: 50px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .lightimg-close:hover,
-        .lightimg-close:focus {
-            color: var(--accent-color);
-        }
+.lightimg-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: modalFadeIn 0.3s;
+}
 
-        /* Navigasi lightimg (Next/Prev) */
-        .lightimg-nav {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -50px;
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-            font-size: 20px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-        .lightimg-nav.prev-nav { left: 0; }
-        .lightimg-nav.next-nav { right: 0; border-radius: 3px 0 0 3px; }
-        .lightimg-nav:hover { background-color: rgb(0, 0, 0); }
+.lightimg-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  user-select: none;
+}
 
+.lightimg-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
 
-/* contact section */
+#caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 1.2rem;
+}
+
+.lightimg-close {
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightimg-close:hover,
+.lightimg-close:focus {
+  color: var(--accent-color);
+}
+
+.lightimg-nav {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.lightimg-nav.prev-nav {
+  left: 0;
+}
+
+.lightimg-nav.next-nav {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.lightimg-nav:hover {
+  background-color: rgb(0, 0, 0);
+}
 
 .contact {
   background: rgb(63, 64, 129);
@@ -1066,8 +1054,8 @@ body {
   box-shadow: 0 0 10px #000000, 0 0 20px #000000;
 }
 
-.contact p{
-  margin-top : -2rem;
+.contact p {
+  margin-top: -2rem;
   text-align: center;
   font-size: 1rem;
   font-weight: 400
@@ -1114,74 +1102,68 @@ body {
   cursor: pointer;
 }
 
-.contact .row form .btn:hover{
+.contact .row form .btn:hover {
   box-shadow: 0 0 10px #999999, 0 0 10px #7e72ff;
   font-size: 2rem;
 }
 
+.unit-section {
+  display: flex;
+  position: relative;
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
+.unit-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: center;
+}
 
-    /* Struktur Dasar Section */
-    
-    .unit-section {
-        display: flex;
-        position: relative;
-        padding: 4rem 1rem; 
-        background-color: #ffffff;
-        font-family: Arial, sans-serif;
-        align-items: center; 
-        justify-content: center;
-        text-align: center;
-    }
-    .unit-container {
-        max-width: 1280px; 
-        margin: 0 auto;
-        align-items: center;
-    }
+.unit-section img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: -1;
+}
 
-    .unit-section img{
-      max-width: 100px;
-      max-height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      z-index: -1;
-    }
+.unit-section h2 {
+  color: #000;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  font-weight: 1000;
+  text-align: center;
+}
 
-    .unit-section h2{
-      color: #000;
-      font-size: 2rem;
-      padding: 1rem;
-      margin-bottom: 3rem;
-      font-weight: 1000;
-      text-align: center;
-    }
+.unit-section h2 span {
+  color: red;
+}
 
-    .unit-section h2 span{
-      color: red;
-    }
+.unit-section h3,
+.unit-section p {
+  color: #000;
+  margin: 1rem;
+  max-width: 30rem;
+}
 
-    .unit-section h3,
-    .unit-section p {
-      color: #000;
-      margin: 1rem;
-      max-width: 30rem;
-    }
+.unit-grid {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  line-height: 2rem;
+}
 
-    /* Grid Layout */
-    .unit-grid {
-      display: flex;
-      padding: 1rem 0;
-      justify-content: center;
-      line-height: 2rem;
-    }
-
-    .unit-item img:hover{
-      content: "";
-      background: rgba(34, 0, 255, 0.514);
-      z-index: 2000;
-    }
-
-
+.unit-item img:hover {
+  content: "";
+  background: rgba(34, 0, 255, 0.514);
+  z-index: 2000;
+}
 
 footer {
   background-color: rgb(63, 64, 129);
@@ -1226,42 +1208,38 @@ footer .credit a {
   font-weight: 700;
 }
 
-
-
 .whatsapp-fixed-button {
-    position: fixed;
-    bottom: 40px; 
-    left: 20px;   
-    z-index: 1000;
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out;
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
 }
 
 .whatsapp-fixed-button:hover {
-    transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
 .whatsapp-icon {
-    width: 60px;  
-    height: 60px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: block;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
 }
 
 
 @media (max-width: 600px) {
-    .whatsapp-fixed-button {
-        bottom: 15px; 
-        left: 15px;   
-    }
-    .whatsapp-icon {
-        width: 50px;  
-        height: 50px;
-    }
+  .whatsapp-fixed-button {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .whatsapp-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
-
-
-/* media queris */
 
 /* laptop */
 @media (max-width: 1366px) {
@@ -1281,11 +1259,11 @@ footer .credit a {
     font-size: 75%;
   }
 
-  
+
   #hamburger-menu {
     display: inline-block;
   }
-  
+
   .book {
     display: inline-block;
   }
@@ -1293,7 +1271,7 @@ footer .credit a {
   .katalog {
     display: none;
   }
-  
+
   .navbar .navbar-nav {
     position: absolute;
     top: 100%;
@@ -1304,11 +1282,11 @@ footer .credit a {
     height: 100vh;
     transition: 0.3s;
   }
-  
+
   .navbar .navbar-nav.active {
     right: 0;
   }
-  
+
   .navbar .navbar-nav a {
     display: block;
     margin: 1.5rem;
@@ -1321,7 +1299,7 @@ footer .credit a {
   .navbar .navbar-nav a::after {
     transform-origin: 0 0;
   }
-  
+
   .navbar .navbar-nav a:hover::after {
     transform: scaleX(0.2);
   }
@@ -1348,13 +1326,13 @@ footer .credit a {
   .about .row {
     flex-wrap: wrap;
   }
-  
+
   .about .row .about-img img {
     height: 24rem;
     object-fit: cover;
     object-position: center;
   }
-  
+
   .about-img .abtimg2,
   .abtimg3 {
     display: none;
@@ -1363,28 +1341,29 @@ footer .credit a {
   .about .row .content {
     padding: 0;
   }
-  
+
   .about .row .content h3 {
     margin-top: 1rem;
     font-size: 2rem;
   }
-  
+
   .about .row .content p {
     font-size: 1.6rem;
   }
-  
+
   .about .row {
     flex-wrap: wrap;
   }
-  
+
   .about .row .about-img img {
     height: 24rem;
     object-fit: cover;
   }
-  
+
   .about-text-wrapper::after {
     height: 0;
   }
+
   .product-card {
     width: calc((100% / 3) - (4rem / 3));
   }
@@ -1405,7 +1384,7 @@ footer .credit a {
     flex-wrap: wrap;
   }
 
-  .unit-section img{
+  .unit-section img {
     max-width: 130px;
   }
 
@@ -1430,24 +1409,24 @@ footer .credit a {
     padding: 0;
   }
 
-.hero .content h2{
-  line-height: 4rem;
-  margin: 1%;
-}
+  .hero .content h2 {
+    line-height: 4rem;
+    margin: 1%;
+  }
 
-.hero .content h3{
-  font-size: 40%;
-  font-weight: 500;
-}
+  .hero .content h3 {
+    font-size: 40%;
+    font-weight: 500;
+  }
 
-  .desk p{
+  .desk p {
     padding: 7%;
     font-size: 1.5rem;
     text-align: justify;
   }
 
-  .about{
-    font-size:90%;
+  .about {
+    font-size: 90%;
     text-align: center;
     padding: 0;
     margin: 1% 0 0 0;
@@ -1458,11 +1437,11 @@ footer .credit a {
     font-size: 2rem;
   }
 
-  .about h3{
+  .about h3 {
     font-size: 1rem;
   }
 
-  .about p{
+  .about p {
     font-size: 45px;
   }
 
@@ -1483,14 +1462,14 @@ footer .credit a {
     margin: 1% 0;
   }
 
-  
-  .product h2{
+
+  .product h2 {
     font-size: 2rem;
     padding-top: 1rem;
   }
-  
 
-  .product h4{
+
+  .product h4 {
     padding: 0;
     font-size: 1.5rem;
     margin-top: 0.2rem;
@@ -1529,28 +1508,28 @@ footer .credit a {
     padding: 0;
   }
 
-  .unit-section h2{
+  .unit-section h2 {
     margin-top: 2rem;
     margin-bottom: 0;
     padding: 0;
     text-align: center;
   }
 
-  .contact{
+  .contact {
     padding: 5%;
   }
 
-  .contact .row .map{
+  .contact .row .map {
     width: 3rem;
     height: 3rem;
     padding: 1%;
   }
 
-  .modal h2{
+  .modal h2 {
     font-size: 1.3rem;
   }
 
-  .modal p{
+  .modal p {
     font-size: 1rem;
     justify-content: center;
     text-align: justify;

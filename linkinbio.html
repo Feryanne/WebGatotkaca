@@ -14,14 +14,12 @@
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
-        /* Reset CSS dasar dan box-sizing */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* Variabel CSS untuk warna mode terang (default) */
         :root {
             --bg-color-light: #f0f2f5;
             --bg-color-card: #ffffff;
@@ -35,15 +33,14 @@
             --header-footer-bg: #ffffff;
             --icon-color: #555;
             --icon-hover-color: #007bff;
-            --search-dropdown-bg: #ffffff; /* Tambahan untuk search dropdown */
-            --search-input-color: #333; /* Tambahan untuk warna teks input search */
-            --search-icon-color: #5d5d5d; /* Tambahan untuk warna ikon search dropdown */
-            --menu-item-hover-border: #67f0ff; /* Warna border hover menu item */
-            --menu-item-hover-bg: #222; /* Background menu item saat hover/tap */
-            --menu-item-hover-color: #67f0ff; /* Warna teks menu item saat hover/tap */
+            --search-dropdown-bg: #ffffff; 
+            --search-input-color: #333; 
+            --search-icon-color: #5d5d5d; 
+            --menu-item-hover-border: #67f0ff; 
+            --menu-item-hover-bg: #222; 
+            --menu-item-hover-color: #67f0ff; 
         }
 
-        /* Variabel CSS untuk warna mode gelap */
         body.dark-mode {
             --bg-color-light: #1a1a1a;
             --bg-color-card: #2c2c2c;
@@ -57,29 +54,27 @@
             --header-footer-bg: #222222;
             --icon-color: #cccccc;
             --icon-hover-color: #88bbff;
-            --search-dropdown-bg: #3c3c3c; /* Warna search dropdown gelap */
-            --search-input-color: #f0f0f0; /* Warna teks input search gelap */
-            --search-icon-color: #cccccc; /* Warna ikon search dropdown gelap */
-            --menu-item-hover-border: #88bbff; /* Warna border hover menu item gelap */
-            --menu-item-hover-bg: #444; /* Background menu item saat hover/tap gelap */
-            --menu-item-hover-color: #88bbff; /* Warna teks menu item saat hover/tap gelap */
+            --search-dropdown-bg: #3c3c3c; 
+            --search-input-color: #f0f0f0; 
+            --search-icon-color: #cccccc; 
+            --menu-item-hover-border: #88bbff; 
+            --menu-item-hover-bg: #444; 
+            --menu-item-hover-color: #88bbff; 
         }
 
-        /* Body dan Global Styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color-light); /* Menggunakan variabel */
-            color: var(--text-color-primary); /* Menggunakan variabel */
+            background-color: var(--bg-color-light); 
+            color: var(--text-color-primary); 
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk mode gelap */
+            transition: background-color 0.3s ease, color 0.3s ease; 
         }
 
-        /* Overlay untuk efek blur */
         .blur-overlay {
             position: fixed;
             top: 0;
@@ -100,22 +95,21 @@
             visibility: visible;
         }
 
-        /* Fixed Header (Header paling atas dengan logo toko dan search) */
         .fixed-header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--header-footer-bg); /* Menggunakan variabel */
+            background-color: var(--header-footer-bg); 
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px var(--shadow-strong); /* Menggunakan variabel */
+            box-shadow: 0 4px 15px var(--shadow-strong);
             z-index: 1000;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk mode gelap */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .header-left {
@@ -134,31 +128,29 @@
         .header-title {
             font-weight: 700;
             font-size: 1.1em;
-            color: var(--text-color-secondary); /* Menggunakan variabel */
+            color: var(--text-color-secondary);
             transition: color 0.3s ease;
         }
 
         .header-right {
             display: flex;
-            gap: 15px; /* Jarak antara ikon pencarian dan mode gelap */
+            gap: 15px; 
             align-items: center;
         }
 
-        /* /* .header-right  */
         .out,
         .header-right .dark-mode-toggle {
             font-size: 1.8em;
-            color: var(--icon-color); /* Menggunakan variabel */
+            color: var(--icon-color); 
             cursor: pointer;
             transition: color 0.3s ease;
         }
 
         .header-right .search-icon:hover,
         .header-right .dark-mode-toggle:hover {
-            color: var(--icon-hover-color); /* Menggunakan variabel */
+            color: var(--icon-hover-color);
         }
 
-        /* Container utama untuk membatasi lebar konten di desktop */
         .main-container {
             max-width: 600px;
             margin: 0 auto;
@@ -171,7 +163,6 @@
             align-items: center;
         }
 
-        /* Header Konten (Logo baru di atas, lalu logo Instagram + @galeribatualam) */
         .content-header {
             text-align: center;
             margin-bottom: 30px;
@@ -200,12 +191,12 @@
 
         .instagram-profile-wrapper .instagram-icon {
             font-size: 1rem;
-            color: var(--icon-color); /* Menggunakan variabel */
+            color: var(--icon-color);   
             transition: color 0.3s ease;
         }
 
         .instagram-profile-wrapper .instagram-icon:hover {
-            color: #E1306C; /* Warna Instagram saat hover */
+            color: #E1306C;   
         }
 
         .instagram-profile-wrapper {
