@@ -247,7 +247,7 @@ if (productCarousel && productCards.length > 0) {
 
 
              const galleryImages = [];
-        for (let i = 1; i <= 27; i++) {
+        for (let i = 1; i <= 18; i++) {
             galleryImages.push({
                 src: `https://placehold.co/800x600/003366/ffffff?text=Foto+Proyek+${i}`,
                 alt: `Foto Proyek Gatot Kaca #${i}`
@@ -315,20 +315,6 @@ if (productCarousel && productCards.length > 0) {
             
             updateLightboxImage();
         }
-
-        // Fungsi untuk menutup modal/lightbox ketika user mengklik di luar area
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-            
-            if (event.target === lightboxModal) {
-                closeLightbox();
-            }
-        }
-
-
 
         // pop up untuk gallery
     function openLightGL(index) {
