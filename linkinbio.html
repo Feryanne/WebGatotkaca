@@ -314,7 +314,7 @@
         }
 
         .contact {
-            background: rgb(77, 77, 77);
+            background-color: #ffffff00;
             padding: 1.4rem 7% 4rem;
         }
 
@@ -322,8 +322,8 @@
             display: flex;
             flex-wrap: wrap;
             margin-top: 2rem;
-            background-color: #0000003b;
-            box-shadow: 0 0 10px #000000, 0 0 20px #000000;
+            background-color: #64646433;
+            box-shadow: 0 0 10px #676767, 0 0 20px #000000;
         }
 
         .contact .row .map {
@@ -335,17 +335,19 @@
 
         .contact .row form {
             flex: 1 1 30rem;
-            padding: 5rem 2rem;
+            padding: 5rem 5rem;
             text-align: center;
         }
 
         .contact .row form .input-group {
+            color: white;
             display: flex;
             align-items: center;
             margin-top: 2rem;
-            background-color: rgba(0, 0, 0, 0.178);
+            background-color: var(--header-footer-bg);
             border: 1px solid#000000;
-            padding-left: 2rem;
+            padding: 0;
+            max-width: 20rem;
         }
 
         .contact .row form .input-group input {
@@ -361,14 +363,14 @@
             display: inline-block;
             padding: 2rem 2rem;
             font-size: 1, 7rem;
-            color: rgb(255, 255, 255);
-            background-color: rgba(134, 156, 255, 0.187);
-            box-shadow: 0 0 10px #373868, 0 0 10px #393569;
+            color: var(--text-color-secondary);
+            background-color: rgba(134, 156, 255, 0);
+            box-shadow: 0 0 10px #5b5b5b, 0 0 10px #786cff;
             cursor: pointer;
         }
 
         .contact .row form .btn:hover {
-            box-shadow: 0 0 10px #999999, 0 0 10px #7e72ff;
+            box-shadow: 0 0 10px #ffffff, 0 0 10px #3aaaff;
             font-size: 1.3rem;
         }
 
@@ -387,7 +389,6 @@
             font-size: 0.9em;
             color: var(--text-color-primary);
             transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-            /* Transisi */
         }
 
 
@@ -468,35 +469,36 @@
 
             .contact .row {
                 flex-wrap: wrap;
-                max-width: 21rem;
+                max-width: 25rem;
             }
 
             .contact .row .map {
                 width: 50%;
                 height: 3rem;
             }
-
+            
             .contact .row form {
-                padding: 0;
-                padding-bottom: 1rem;
+                padding: 3rem;
+                padding-bottom: 2rem;
             }
-
+            
             .contact .row form .input-group {
-                margin-left: 0;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
             }
-
+            
             .contact .row form .input-group input {
-                padding: 1rem 1rem;
+                padding: 1rem 5rem;
                 font-size: 0.75rem;
-                margin-left: -1.2rem;
             }
-
+            
             .contact .row form .btn {
-                margin-top: 1rem;
-                padding: 0.5rem 0.8rem;
+                margin-top: 2rem;
+                padding: 1rem 1rem;
                 font-size: 0.8rem;
             }
-
+            
             .contact .row form .btn:hover {
                 font-size: 0.85rem;
             }

@@ -1247,7 +1247,7 @@ footer .credit a {
 
 @media (max-width: 835px) {
   html {
-    font-size: 75%;
+    font-size: 40%;
   }
 
 
@@ -1312,6 +1312,10 @@ footer .credit a {
     transform: translateX(-30%);
     width: 70%;
   }
+  
+  .desk p{
+    text-align: justify;
+  }
 
 
   .about .row {
@@ -1356,7 +1360,7 @@ footer .credit a {
   }
 
   .product-card {
-    width: calc((100% / 3) - (4rem / 3));
+    width: calc((100% / 3) - (3rem / 3));
   }
 
   .contact .row {
@@ -1386,7 +1390,7 @@ footer .credit a {
 
 /* mobile phone */
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   html {
     font-size: 70%;
   }
