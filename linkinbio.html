@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gatot Kaca Group</title>
+    <title> Toko Bangunan Gatot Kaca | Pusat Batu Alam dan Genteng Kediri </title>
     <link rel="icon" type="image/png" href="img/logo.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -334,20 +334,18 @@
         }
 
         .contact .row form {
-            flex: 1 1 30rem;
-            padding: 5rem 5rem;
+            flex: 1 1 45rem;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
         .contact .row form .input-group {
-            color: white;
             display: flex;
             align-items: center;
             margin-top: 2rem;
-            background-color: var(--header-footer-bg);
-            border: 1px solid#000000;
-            padding: 0;
-            max-width: 20rem;
+            background-color: var(--bg-color-card);
+            border: 1px solid#3c00ff;
+            padding-left: 0;
         }
 
         .contact .row form .input-group input {
@@ -355,7 +353,7 @@
             padding: 2rem;
             font-size: 1.7rem;
             background: none;
-            color: rgb(255, 255, 255);
+            color: var(--text-color-secondary);
         }
 
         .contact .row form .btn {
@@ -416,7 +414,14 @@
         }
 
         /* Media Queries untuk Responsivitas */
+
+
+
         @media (max-width: 480px) {
+            html{
+                font-size: 75%;
+            }
+
             .fixed-header {
                 padding: 12px 15px;
             }
@@ -469,16 +474,16 @@
 
             .contact .row {
                 flex-wrap: wrap;
-                max-width: 25rem;
+                max-width: 30rem;
             }
 
             .contact .row .map {
                 width: 50%;
                 height: 3rem;
             }
-            
+
             .contact .row form {
-                padding: 3rem;
+                padding: 1rem;
                 padding-bottom: 2rem;
             }
             
@@ -490,15 +495,16 @@
             
             .contact .row form .input-group input {
                 padding: 1rem 5rem;
-                font-size: 0.75rem;
+                font-size: 1rem;
+                font-weight: 700;
             }
-            
+
             .contact .row form .btn {
                 margin-top: 2rem;
                 padding: 1rem 1rem;
                 font-size: 0.8rem;
             }
-            
+
             .contact .row form .btn:hover {
                 font-size: 0.85rem;
             }
